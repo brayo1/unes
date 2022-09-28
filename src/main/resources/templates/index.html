@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Registry</title>
+</head>
+<body>
+<div align="center">
+  <h1>Person Registry</h1>
+    <form th:action="@{/search}" method="get">
+        <input type="text" name="keyword" th:value="${keyword}"  placeholder="Find by first Name or occupation" size="50" >
+        <button type="submit" class="btn btn-info" >Search</button>
+        <button type="submit" class="btn btn-info" >Reset</button>
+    </form>
+    <br></br>
+    <br></br>
+    <a href="new">Create new Person Registry</a>
+    <br></br>
+  <table border="1" cellpadding="10">
+    <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Nationality</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>Occupation</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="person: ${listPersons}" th:field="${person}">
+        <td th:text="${person.firstName}"></td>
+        <td th:text="${person.lastname}"></td>
+        <td th:text="${person.nationality}"></td>
+        <td th:text="${person.sex}"></td>
+        <td th:text="${person.age}"></td>
+        <td th:text="${person.occupation}"></td>
+        <td th:text="${person.phone}"></td>
+        <td th:text="${person.address}"></td>
+
+        <td>
+            <a th:href="@{'/update/' +${person.id}}">Update </a>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <a th:href="@{'/delete/' +${person.id}}">Delete </a>
+        </td>
+
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

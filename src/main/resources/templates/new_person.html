@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Person Registry</title>
+</head>
+<body>
+<div align="center">
+  <h1>Create new Registry</h1>
+  <br/>
+  <form action="#" th:action="@{/save}" th:object="${person}" method="post">
+    <table cellpadding="10" border="0">
+      <tr>
+        <td>First Name:</td>
+        <td> <input type="text" th:field="*{firstName}" /> </td>
+      </tr>
+
+      <tr>
+        <td>Last Name:</td>
+        <td> <input type="text" th:field="*{lastname}" /> </td>
+      </tr>
+      <tr>
+        <td>Sex:</td>
+        <td> <input type="text" th:field="*{sex}" /> </td>
+      </tr>
+      <tr>
+        <td>Nationality:</td>
+        <td> <input type="text" th:field="*{nationality}" /> </td>
+      </tr>
+      <tr>
+        <td>Occupation:</td>
+        <td> <input type="text" th:field="*{occupation}" /> </td>
+      </tr>
+      <tr>
+        <td>Religion:</td>
+        <td> <input type="text" th:field="*{religion}" /> </td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td> <input type="text" th:field="*{email}" /> </td>
+      </tr>
+
+      <tr>
+        <td>Address:</td>
+        <td> <input type="text" th:field="*{address}" /> </td>
+      </tr>
+      <tr>
+        <td>Age:</td>
+        <td> <input type="text" th:field="*{age}" /> </td>
+      </tr>
+      <tr>
+        <td>Phone:</td>
+        <td> <input type="text" th:field="*{phone}" /> </td>
+      </tr>
+
+      <tr >
+        <td> <b>Next Of Kin</b> </td>
+      </tr>
+
+
+<!--      <select th:field="*{category}" class="form-control">-->
+<!--        <option th:each="category: ${productCategories}" th:value="${category.id}" th:text="${category.name}"></option>-->
+<!--      </select>-->
+
+      <tr>
+        <td>Relationshhip:</td>
+        <td> <input type="text" th:field="*{nextOfKin.relation}" /> </td>
+      </tr>
+      <tr>
+        <td>First Name:</td>
+        <td> <input type="text" th:field="*{nextOfKin.firstName}" /> </td>
+      </tr>
+      <tr>
+        <td>Last Name:</td>
+        <td> <input type="text" th:field="*{nextOfKin.lastName}" /> </td>
+      </tr>
+      <tr>
+        <td>Address:</td>
+        <td> <input type="text" th:field="*{nextOfKin.address}" /> </td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td> <input type="text" th:field="*{nextOfKin.email}" /> </td>
+      </tr>
+      <tr>
+        <td>Occupation:</td>
+        <td> <input type="text" th:field="*{nextOfKin.occupation}" /> </td>
+      </tr>
+      <tr>
+        <td>Phone:</td>
+        <td> <input type="text" th:field="*{nextOfKin.phone}" /> </td>
+      </tr>
+
+      <tr >
+        <td> <b>Clinic Details</b> </td>
+      </tr>
+      <tr>
+        <td>Weight:</td>
+        <td> <input type="text" th:field="*{clinicDetails.Weight}" /> </td>
+      </tr>
+      <tr>
+        <td>Body Mass Index:</td>
+        <td> <input type="text" th:field="*{clinicDetails.BMI}" /> </td>
+      </tr>
+      <tr>
+        <td>Heart Rate:</td>
+        <td> <input type="text" th:field="*{clinicDetails.HeartRate}" /> </td>
+      </tr>
+      <tr>
+        <td>Blood Type:</td>
+        <td> <input type="text" th:field="*{clinicDetails.BloodType}" /> </td>
+      </tr>
+      <tr>
+        <td>LAst Clinic Visit:</td>
+        <td> <input type="date" th:field="*{clinicDetails.lastClinicVisit}" /> </td>
+      </tr>
+
+
+      <tr>
+        <td colspan="2"> <button type="submit">Save</button> </td>
+      </tr>
+
+    </table>
+  </form>
+</div>
+
+</body>
+</html>
